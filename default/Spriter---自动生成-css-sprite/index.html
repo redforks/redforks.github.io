@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Spriter - 自动生成 css sprite</title>
+  
+    <meta name="author" content="Red Forks">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="/assets/hooligan/stylesheets/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/hooligan/stylesheets/bootstrap/css/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/hooligan/stylesheets/css-social-buttons/zocial.stripped.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/hooligan/stylesheets/css/darkstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/hooligan/stylesheets/css/style.css?body=1" type="text/css" rel="stylesheet" media="all">
+<script src="/assets/hooligan/javascripts/jquery.min.js"></script>
+<script src="/assets/hooligan/javascripts/bootstrap.min.js"></script>
+<link href="/assets/hooligan/widgets/google_prettify/stylesheets/sunburst.css" type="text/css" rel="stylesheet" media="all">
+ 
+    
+    <!-- fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>      
+
+
+          <a class="brand" href="/">Forks 的代码工坊</a>
+
+
+          <div class="nav-collapse">
+            <ul class="nav">
+              
+                
+
+
+  <li><a href="/archive">存档</a></li>
+
+
+              
+                
+
+
+  <li><a href="/tags">标签</a></li>
+
+
+              
+                
+
+
+  <li><a href="/categories">分类</a></li>
+
+
+              
+                
+
+
+  <li><a href="/pages">页面</a></li>
+
+
+              
+                
+
+
+  <li><a href="/about">我的链接</a></li>
+
+
+              
+            </ul>
+            <ul class="nav pull-right social">
+              <li class="divider-vertical"></li>
+              
+                <li>
+                  <a href="https://www.github.com/redforks" class="zocial github" target="_blank"></a>
+                </li>
+              
+              
+              
+              
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        
+<div class="page-header-wrapper">
+  <div class="page-header">
+      <h1>Spriter - 自动生成 css sprite </h1>
+    </div>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <p>又一个css sprite工具？是的，她存在的理由是<strong>自动</strong>。以一个例子来说明，假如有如下css：</p>
+
+<pre><code>.icon_object {
+  background: url('grp1.object.png');
+}
+
+.icon_method {
+  background: url('grp1.method.png');
+}
+
+.icon_form {
+  background: url('grp1.form.png');
+}
+
+.icon_list {
+  background: url('grp2.list.png');
+}
+
+.icon_template {
+  background: url('grp2.template.png');
+}
+
+.icon_enum {
+  background: url('grp2.enum.png');
+}
+
+.icon_service {
+  background: url('grp2.service.png');
+}
+</code></pre>
+
+<p>每一个图标，都是单独的图标文件：</p>
+
+<ol>
+<li><img src="/assets/media/grp1.object.png" alt="object" />:  grp1.object.png</li>
+<li><img src="/assets/media/grp1.method.png" alt="method" />:  grp1.method.png</li>
+<li><img src="/assets/media/grp1.form.png" alt="form" />: grp1.form.png</li>
+<li><img src="/assets/media/grp2.list.png" alt="list" />:  grp2.list.png</li>
+<li><img src="/assets/media/grp2.template.png" alt="template" />:  grp2.template.png</li>
+<li><img src="/assets/media/grp2.enum.png" alt="enum" />: grp2.enum.png</li>
+<li><img src="/assets/media/grp2.service.png" alt="service" />: grp2.service.png</li>
+</ol>
+
+<p>运行<code>Spriter</code>:</p>
+
+<pre><code>spriter -i tree.css -o build/tree.css
+</code></pre>
+
+<p>生成三个文件：<code>tree.css</code>, <code>Q-EoXMh-.png</code>, <code>GyO8rqsS.png</code>。tree.css的内容:</p>
+
+<pre><code>.icon_object {
+  background: url(Q-EoXMh-.png) no-repeat;
+}
+
+.icon_method {
+  background: url(Q-EoXMh-.png) no-repeat -16px 0;
+}
+
+.icon_form {
+  background: url(Q-EoXMh-.png) no-repeat -32px 0;
+}
+
+.icon_list {
+  background: url(GyO8rqsS.png) no-repeat;
+}
+
+.icon_template {
+  background: url(GyO8rqsS.png) no-repeat -16px 0;
+}
+
+.icon_enum {
+  background: url(GyO8rqsS.png) no-repeat -32px 0;
+}
+
+.icon_service {
+  background: url(GyO8rqsS.png) no-repeat -48px 0;
+}
+</code></pre>
+
+<p>Q-EoXMh-.png: <img src="/assets/media/Q-EoXMh-.png" alt="Compiled spriter 1" />, GyO8rqsS.png: <img src="/assets/media/GyO8rqsS.png" alt="Compiled spriter 2" />。</p>
+
+<p><code>Spriter</code> 寻找 background 图片，如果符合 <code>group.name.png</code>格式，按<code>group</code>名来分组，每组生成一个 sprite ，如这里的 <code>grp1</code> 和 <code>grp2</code> 两组。</p>
+
+<p>对生成的 sprite 图片文件，计算 hash value, 用其前缀作为文件名。sprite 任何变化文件名也会相应改变<a name="footnote1">¹</a>。当增加或减少了同组文件的数量，或者修改了图片，则 sprite 文件名也会改变。对 sprite 文件可以安全的打开 http cache，并设置有效期为一万年（开个玩笑，习惯上设置为一年）。</p>
+
+<p>文件名使用 <code>URL</code> 安全的 <code>base64</code> 编码，普通的 <code>base64</code> 符号集有时会制造麻烦，毕竟图片文件也是用 http URL访问的。</p>
+
+<h3>安装</h3>
+
+<p><code>Spriter</code> 使用 <code>Go</code> 语言，最简单的安装方式是：</p>
+
+<pre><code>go get -u github.com/redforks/css/cmd/spriter
+</code></pre>
+
+<p>在 <code>Linux</code> 和 <code>OS/X</code> 中都能正常运行，理论上 <code>Windows</code> 也可以，不过没有试过。</p>
+
+<h3>总结</h3>
+
+<h4>优势和特点</h4>
+
+<ol>
+<li>无须手工制作 sprite 文件</li>
+<li>无须手工维护 sprite image 的 位移 offset</li>
+<li>开发过程中，直接使用源图片，不要担心 sprite</li>
+<li>配合 <code>css</code> 编译工具，把多个 css 文件合并后，运行 <code>Spriter</code>，保证 sprite 里只有被使用的图像，没有任何带宽浪费。</li>
+</ol>
+
+<p>任何问题， fire issue at <a href="http://github.com/redforks/css">http://github.com/redforks/css</a> or email: <a href="mailto:redforks@gmail.com">redforks@gmail.com</a></p>
+
+<hr />
+
+<p><sup><a href="#footnote1">1</a></sup> 理论上存在着两个不同的文件，拥有相同的 hash value，特别是这里只使用了 hash value 的前缀。但实际上几乎几乎不会发生。</p>
+
+  </div>
+</div>
+
+      </div>
+
+      <footer>
+        <p>&copy; Red Forks 2012 
+          with help from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+    </div> <!-- /container -->
+
+    
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-86674840-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    
+<script src="//cdnjscn.b0.upaiyun.com/libs/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+
+  </body>
+</html>
