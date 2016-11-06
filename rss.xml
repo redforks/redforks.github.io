@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>Forks 的代码工坊</title>
     <link>http://sample.com</link>
-    <pubDate>02 Nov 16 08:41 CST</pubDate>
+    <pubDate>06 Nov 16 09:46 CST</pubDate>
+    <item>
+      <title>Life Package</title>
+      <link>http://sample.com/default/Life-Package/</link>
+      <pubDate>2016-11-06 12:00:00 +0800</pubDate>
+      <description>&lt;h1&gt;Life golang package&lt;/h1&gt;&#xA;&#xA;&lt;p&gt;Life 是一个 Go 语言的 包(Package) 管理库：&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Package 按照依赖顺序启动&lt;/li&gt;&#xA;&lt;li&gt;按照依赖的反序停止&lt;/li&gt;&#xA;&lt;li&gt;钩子函数&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;p&gt;详细说明请看：&lt;a href=&#34;http://github.com/redforks/life&#34;&gt;http://github.com/redforks/life&lt;/a&gt; 的 README.&lt;/p&gt;&#xA;</description>
+    </item>
     <item>
       <title>Spriter - 自动生成 css sprite</title>
       <link>http://sample.com/default/Spriter---%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90-css-sprite/</link>

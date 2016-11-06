@@ -4,6 +4,11 @@
 		<loc>http://sample.com/</loc>
 	</url>
 	<url>
+		<loc>http://sample.com/default/Life-Package/</loc>
+		<lastmod>2016-11-06</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
 		<loc>http://sample.com/default/Spriter---%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90-css-sprite/</loc>
 		<lastmod>2016-10-31</lastmod>
 		<changefreq>weekly</changefreq>
