@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>存档</title>
+    <title>Type Switch and nil in Go</title>
   
     <meta name="author" content="Red Forks">
 
@@ -49,9 +49,9 @@
             <ul class="nav">
               
                 
-  <li class="active"><a href="/archive" class="active">存档</a></li>
 
 
+  <li><a href="/archive">存档</a></li>
 
 
               
@@ -106,47 +106,49 @@
         
 <div class="page-header-wrapper">
   <div class="page-header">
-      <h1>存档 </h1>
+      <h1>Type Switch and nil in Go </h1>
     </div>
 </div>
 
 <div class="row">
   <div class="span12">
-    
+    <h1>Handle <code>nil</code> in type switch</h1>
 
-  <h2>2017</h2>
+<p>In Go type switch supports <code>nil</code> case:</p>
 
-  <h3>January</h3>
-  <ul>
-  
-    <li><span>2017-01-22</span> &raquo; <a href="/default/Type-Switch-and-nil-in-Go/">Type Switch and nil in Go</a></li>
-  
-  </ul>
+<pre><code>switch e := err.(type) {
+  case nil:
+    // no error happened
+  case MyError:
+    // Handle MyError type
+  default:
+    // Handle other type of errors
+}
+</code></pre>
 
+<h1>Anti-pattern</h1>
 
-  <h2>2016</h2>
+<p><code>nil</code> case statement saves an <code>if</code> statement, but sometimes add <code>if</code> statement is more clear:</p>
 
-  <h3>November</h3>
-  <ul>
-  
-    <li><span>2016-11-13</span> &raquo; <a href="/default/Open-Close-Loop/">Open Close Loop</a></li>
-  
-    <li><span>2016-11-13</span> &raquo; <a href="/default/Oral-vs-Written/">Oral vs Written</a></li>
-  
-    <li><span>2016-11-06</span> &raquo; <a href="/default/Life-Package/">Life Package</a></li>
-  
-  </ul>
+<pre><code>if err == nil {
+  // no error happened, happy to return
+  return
+}
 
-  <h3>October</h3>
-  <ul>
-  
-    <li><span>2016-10-31</span> &raquo; <a href="/default/Spriter---%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90-css-sprite/">Spriter - 自动生成 css sprite</a></li>
-  
-    <li><span>2016-10-31</span> &raquo; <a href="/default/%E5%90%8D%E5%AD%97%E7%94%9F%E6%88%90%E5%99%A8/">名字生成器</a></li>
-  
-  </ul>
+// Now handle errors
+switch e := err.(type) {
+  case MyError:
+    // Handle MyError type
+  default:
+    // Handle other type of errors
+}
+</code></pre>
 
+<p><code>nil</code> and not nil is a big difference, use a dedicate <code>if</code> statement makes it more clear.</p>
 
+<h1>Conclusion</h1>
+
+<p>If nil handling has a very big meaning, not parallel to other <code>case</code> statement, it is better use a dedicate <code>if</code>.</p>
 
   </div>
 </div>

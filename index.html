@@ -117,6 +117,39 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/default/Type-Switch-and-nil-in-Go/">Type Switch and nil in Go</a> <span class="date">2017-01-22</span></h3>
+
+  <h1>Handle <code>nil</code> in type switch</h1>
+
+<p>In Go type switch supports <code>nil</code> case:</p>
+
+<pre><code>switch e := err.(type) {
+  case nil:
+    // no error happened
+  case MyError:
+    // Handle MyError type
+  default:
+    // Handle other type of errors
+}
+</code></pre>
+
+<h1>Anti-pattern</h1>
+
+<p><code>nil</code> case statement saves an <code>if</code> statement, but sometimes add <code>if</code> statement is more clear:</p>
+
+<pre><code>if err == nil {
+  // no error happened, happy to return
+  return
+}
+</code></pre>
+
+
+  <div class="more">
+    <a href="/default/Type-Switch-and-nil-in-Go/" class="btn">More</a>
+  </div>
+</div>
+
+<div class="post">
   <h3 class="title"><a href="/default/Open-Close-Loop/">Open Close Loop</a> <span class="date">2016-11-13</span></h3>
 
   <h1>开环闭环与组织机构</h1>
