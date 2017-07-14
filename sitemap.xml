@@ -4,6 +4,11 @@
 		<loc>http://sample.com/</loc>
 	</url>
 	<url>
+		<loc>http://sample.com/default/Mr.-Xia%27s-Beard/</loc>
+		<lastmod>2017-07-14</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
 		<loc>http://sample.com/default/Type-Switch-and-nil-in-Go/</loc>
 		<lastmod>2017-01-22</lastmod>
 		<changefreq>weekly</changefreq>
